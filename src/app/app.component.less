@@ -1,0 +1,89 @@
+.emphy{
+  width: 0px;
+  height: 0px;
+}
+
+.arrow-left {
+  display: inline-block;
+  position: absolute;
+  background-color: red;
+  top: 0px;
+  width: 2rem;
+  height: 1rem;
+  transition: 1s;
+  &:after{
+    position: absolute;
+    content: "";
+    //width: 0.5rem;
+    //height: 1rem;
+    //box-sizing: content-box;
+    left: 2rem;
+    border-left: 1rem solid #c00;
+    border-top: 0.5rem solid transparent;
+
+    border-bottom: 0.5rem solid transparent;
+  }
+
+}
+.text-show{
+  color: blue;
+}
+.text-hidden{
+  color: #aaa;
+}
+
+.anime-cntrl {
+  padding: 1rem;
+  width: 100%;
+  display: block;
+  input{
+    .emphy;
+  }
+  .container-label{
+    padding: 0.25rem 0.5rem;
+    //padding-bottom: 0.5rem;
+    overflow-y: hidden;
+    //box-sizing: content-box;
+    display:  inline-flex;
+    background-color: #ccc;
+    justify-content: center;
+    height: 2rem;
+
+    .body-label{
+
+      transition: 1s;
+      display: block;
+      font-size: 2rem;
+      white-space: nowrap;
+
+
+      //height: 4rem;
+      .text-top{
+        .text-show;
+      }
+      .text-bottom{
+        //line-height: 2.5;
+        .text-hidden;
+      }
+    }
+    .prepend{
+      //line-height: 1.25;
+      position: relative;
+      width: 3rem;
+      .arrow {
+        transition: 1s;
+        .arrow-left;
+      }
+    }
+  }
+  input:checked + .container-label{
+    .arrow{
+      top: 50%;
+    }
+    .body-label{
+      transform: translateY(-2.5rem);
+      .text-top {.text-hidden;}
+      .text-bottom {.text-show;}
+    }
+  }
+}
